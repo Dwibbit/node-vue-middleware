@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue JS Middleware Rendering Engine</title>
+        <style>
+            .new-form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>hello world</h1>
+        <div id="app">
+            <h2>{{display}}</h2>
+            <form @submit.prevent="submitForm" class="new-form">
+              <label for="firstname">First Name:</label>
+              <input type="text" v-model="formData.firstname" id="firstname" required>
+        
+              <label for="lastname">Last Name:</label>
+              <input type="text" v-model="formData.lastname" id="lastname" required>
+          
+              <label for="email">Email:</label>
+              <input type="email" v-model="formData.email" id="email" required>
+        
+              <label for="phone">Phone:</label>
+              <input type="text" v-model="formData.phone" id="phone" required>
+          
+              <button type="submit">Submit</button>
+            </form>
+        </div>
+        <script type="module">
+
+            import { createApp } from 'https://cdn.jsdelivr.net/npm/vue@3.2.6/dist/vue.esm-browser.js';
+            document.addEventListener('DOMContentLoaded', () => {
+                console.log('DOM is fully loaded. Your code can run now.');
+            });
+            const app = createApp({
+                data() {
+                    return {
+                        display: "display message",
+                        formData: {
+                            firstname: '',
+                            lastname: '',
+                            email: '',
+                            phone: '',
+                        }
+                    }
+                },
+                methods: {
+                    submitForm() {
+                        console.log(this.formData);
+                        alert('Submission successful!');
+                    }
+                }
+            });
+            const vm = app.mount('#app');
+            console.log(vm);
+        </script>
+    </body>
+</html>
