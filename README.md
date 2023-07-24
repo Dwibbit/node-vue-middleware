@@ -20,7 +20,9 @@ The extracted <style> will be input into the <style> tag in the <head> tag
 The extracted <template> will be input into the <div id="app> tag
 The extracted <script> will be input into the content of the imported createApp
 
-Currently the scripts can run with form validation from Vue's built in form, and custom validation methods
+Currently the scripts can run with form validation from Vue's built in form, and custom validation methods.
 
 After the extraction is successful, the new HTML format will be written into the outputHtmlFile 'output.html' which will generate after a successful run of conversion.
 If the file writes successfully, the browser should open and display the new 'output.html' file which is properly converted, displayed, and interactable.
+
+Further documentation exists with JSDoc comments in the index.js file
